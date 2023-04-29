@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Style.css">
+        
+
+
+<style>
+.header{
+    background-color:rgba(55, 65, 89, 0.818);
+    width: 100%;
+    height: 100px;
+    color: rgb(255, 255, 255);
+   
+}
+#h3{
+    margin-left: 60px;
+    margin-top: 10px;
+    padding-top: 35px;
+    font-size: 30px;
+    
+}
+.logo{
+    width: 200px;
+    height: 100px;
+    margin-right: 0px;
+    margin-top: -99px;
+    float: right;
+    position: relative;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+body{
+    background-image:url('https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?size=626&ext=jpg&ga=GA1.1.2107995083.1682363757&semt=ais');
+    background-position: center center;
+	 background-attachment: fixed;
+    background-size: cover;
+background-repeat: no-repeat;
+}
+label{
+    display: block;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    }
+.formContent {
+    color: azure;
+    position: relative;
+    margin: 3% auto;
+    height: 1015px;
+    width: 50%;
+    box-shadow: 0 4px 16px rgba(5, 0, 0, 0.6);
+    background-color: rgb(55, 65, 89);
+    padding: 10px 0px 5px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.formInput {
+    display: block;
+    margin: 10px 30px 15px 30px;
+    padding: 4px;
+    width: 60%;
+    height: 40px;
+    box-sizing: border-box;
+    border-color: black;
+    font-size: 12px;
+    border-radius: 6px;
+}
+.btn{
+    display: inline;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 80px;
+    }
+    .btn:hover{
+        cursor: pointer;
+    }
+    .output{
+        width: 500px;
+        height: 30px;
+        margin-top: 17px;
+        margin-left: 113px;
+        box-shadow: 0 2px 16px rgba(145, 145, 157, 0.6);
+        background:  rgba(245, 245, 220, 0.784);
+        padding: 10px 0px 5px 15px;
+        border-radius: 8px;
+        border:none;
+      }
+  .info{
+    background-color: rgba(224, 241, 243, 0.867);
+    width:100%;
+    height:410px;
+}
+.info .h4{
+    background-color: rgba(224, 241, 243, 0.915);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: large;
+}
+
+.footer{
+    background-color:rgba(55, 65, 89, 0.818);
+    width:100%;
+    height: 120px;
+    margin-top: 10px;
+    color: azure;
+   font-size: 18px;
+   padding-left: 8px;
+}
+.footer h4{
+    margin-left: 5px;
+    padding-top: 8px;
+    color: azure;
+}
+.footer p{
+    margin-top: -7px;
+}
+.developer{
+float:right;
+margin-right: 10px;
+padding-bottom: 5px;
+
+}
+.data{
+font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    line-height: 25px;
+    color:black;
+	margin-left: 35px;
+}
+select{
+    display: block;
+    margin: 10px 30px 15px 30px;
+    padding: 4px;
+    width: 60%;
+    height: 40px;
+    box-sizing: border-box;
+    border-color: black;
+    font-size:20px;
+    font-weight:20px;
+    border-radius: 6px;
+}
+.option{
+font-size:20px;
+font-weight:20px;
+}
+#Diabetsform{
+margin-left:135px;
+}
+input[type="text"]
+{
+    font-size:20px;
+}
+
+
+     </style>
+        <title>Diabetes Prediction</title>
+     </head>
+      
+<body>
+
+<header class="header">
+
+     <h3 id="h3">#Diabetes Prediction System</h3> 
+    <img class='logo' src="static\2.jpeg" alt="">
+   
+</header>
+
+<div class="formContent">
+ <form id="Diabetsform" action="{{ url_for('predict')}}" method="post">
+     <label>Gender</label>
+	 <select>
+	 <option>
+	 <option class='option'>Male
+	 <option class='option'>Female
+	 <option class='option'>I don't want
+	 </select>
+     
+	 <label>Age</label>
+     <input type="text" class="formInput" name="age" placeholder="" autocomplete="off" required="required">
+     <label>Glucose</label>
+     <input type="text" class="formInput" name="x_1" placeholder="" autocomplete="off" required="required">
+     <label>Blood Pressure</label>
+     <input type="text" class="formInput" name="x_2" placeholder="" autocomplete="off" required="required">
+     <label>Skin Thickness</label>
+     <input type="text" class="formInput" name="x_3" placeholder="" autocomplete="off" required="required">
+     <label>Insulin</label>
+     <input type="text" class="formInput" name="x_4" placeholder="" autocomplete="off" required="required">
+     <label>BMI</label>
+     <input type="text" class="formInput" name="x_5" placeholder="" autocomplete="off" required="required">
+     <label>Diabetes Pedigree Function</label>
+     <input type="text" class="formInput" name="x_6" placeholder="" autocomplete="off" required="required">
+	 <label>Calorie Intake</label>
+     <input type="text" class="formInput" name="x_7" placeholder="" autocomplete="off" required="required">
+     <button type="submit" class="btn">Predict Whether or Not Diabetes</button>
+		
+    </form>
+
+<button type="button" class="output" >{{ prediction_text }}</button>
+  </div>
+
+
+<div class="info">
+<h4 class="h4"><marquee>Information About Diabetes</marquee></h4>
+<div class="data">
+<p>
+Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy.<br>
+Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream.<br>
+When your blood sugar goes up, it signals your pancreas to release insulin.<br>
+Insulin acts like a key to let the blood sugar into your body’s cells for use as energy.<br>
+With diabetes, your body doesn’t make enough insulin or can’t use it as well as it should.<br>
+When there isn’t enough insulin or cells stop responding to insulin, too much blood sugar stays in your bloodstream.<br>
+Over time, that can cause serious health problems, such as heart disease, vision loss, and kidney disease.<br>
+<h5>Other things you can do to help:</h5>
+<li>Take medicine as prescribed.</li>
+<li>Get diabetes self-management education and support.</li>
+<li>Make and keep health care appointments.</li>
+</p>
+</div>
+</div>
+
+
+<div class="footer">
+    <h4>About Website</h4>
+<p>
+This site has been designed to predict diabetes.<br>
+I used Diabetes Patients Data from the Kaggle website to Build my machine learning model.<br>
+And I used flask code to connect my pickle model with my website and I used HTML and CSS and some Javascript to build the website.
+</p>
+        <h5 class="developer">&copy Ahmed M.Abdallah</h5>
+
+</div>
+</body>
+</html> 
+
